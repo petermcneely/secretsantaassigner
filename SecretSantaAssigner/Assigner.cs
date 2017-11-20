@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
@@ -151,9 +150,9 @@ namespace SecretSantaAssigner
             MailMessage message = new MailMessage();
             message.To.Add(dev.EmailAddress);
             message.Subject = "Secret Santa Assignment";
-            message.From = new MailAddress("notifications@miacanalytics.com");
+            message.From = new MailAddress(SystemVariables.ServiceAddress);
             message.Body = this.GetEmailBody(dev.FirstName, dev.GiftRecipient.FullName);
-            SmtpClient smtp = new SmtpClient("miacsys02.miacanalytics.net");
+            SmtpClient smtp = new SmtpClient(SystemVariables.Host);
             try
             {
                 smtp.Send(message);

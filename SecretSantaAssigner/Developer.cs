@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Mail;
+﻿using System.Net.Mail;
 
 namespace SecretSantaAssigner
 {
@@ -20,7 +15,7 @@ namespace SecretSantaAssigner
         {
             get
             {
-                MailAddress mailAddress = new MailAddress(string.Concat(this.FirstName, ".", this.LastName, "@miacanalytics.com"));
+                MailAddress mailAddress = new MailAddress(string.Format("{0}.{1}@{2}", this.FirstName, this.LastName, SystemVariables.Domain));
                 return mailAddress;
             }
         }

@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using System.Net.Mail;
-using System.Net;
 
 namespace SecretSantaAssigner
 {
 
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string ParticpantsFile = "";
             string EmailBodyFile = "";
@@ -62,7 +56,7 @@ namespace SecretSantaAssigner
                     string helpMessage = "\r\n\r\n**********************************************************";
                     helpMessage += "\r\nHO! HO! HO! Welcome to the Secret Santa Assigner help menu";
                     helpMessage += "\r\n**********************************************************";
-                    helpMessage += "\r\n\r\nPlease note that this Secret Santa Assigner was built to send emails using notifications@miacanalytics.com as the sending account. Additionally, it assumes that each participant has a valid miacanalytics email account constructed by concatenating their first name, a period, and their last name.";
+                    helpMessage += "\r\n\r\nPlease note that this Secret Santa Assigner was built to send emails using " + SystemVariables.ServiceAddress + " as the sending account. Additionally, it assumes that each participant has a valid " + SystemVariables.Domain + " email account constructed by concatenating their first name, a period, and their last name.";
                     helpMessage += "\r\n\r\nPlease use the following arguments to assign and send secret santas:";
                     helpMessage += "\r\n\r\n-participants <file path>: the path to the .txt file that holds the names of the participants in your Secret Santa Event. Ensure that each line in this file is its own participant; ensure that each participant includes a valid first and last name separated by one space.";
                     helpMessage += "\r\n\r\n-email <file path>: the path to the .txt file that includes the body of the email to be sent. This application will replace {SECRET_SANTA} with the secret santa participant and {RECIPIENT} with their recipient.";
