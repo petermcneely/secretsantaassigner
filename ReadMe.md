@@ -1,4 +1,4 @@
-#Secret Santa Assigner
+# Secret Santa Assigner
 
 ----
 *Welcome to the secret santa assigner console application.*
